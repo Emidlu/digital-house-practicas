@@ -1,37 +1,18 @@
 var express = require('express');
 var router = express.Router();
-const multer = require('multer');
-let path = require('path');
-
-let controller = require('../Controllers/controllers.js');
-
-
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/images')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-   
-  var upload = multer({ storage: storage })
-
-  
+let usuarioAdmin = require('../middlewares/usuario-admin');
 
 /* GET home page. */
-router.get('/', controller.mostrarIndex);
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
-router.get('/search', controller.encontrado);
+router.get('/admin',usuarioAdmin, function(req, res) {
 
-router.get('/products', controller.mostrarTodos);
+  res.send('Bienvenido ' + req.query.user);
+});
 
-router.get('/crear', controller.crear);
 
-router.post('/creado', controller.creando);
 
-router.get('/registro', controller.registro);
-
-router.post('/registrado', upload.any(), controller.registrado);
 
 module.exports = router;

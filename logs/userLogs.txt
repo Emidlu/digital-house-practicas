@@ -1,0 +1,2 @@
+El usuario ingresó a la ruta: /hola
+El usuario ingresó a la ruta: /hola

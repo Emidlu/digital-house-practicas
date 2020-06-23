@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./head')%>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="/css/app.css">
+</head>
 <body>
-<!---->	<%- include('./header')%>
-	
-	<!-- Banner -->
-	<div class="banner"></div>
-	<!-- /Banner -->
-
-	<!-- ultima visita -->
-	
-	<%- include('./tarjetas',{condicion:'visitas', titulo: 'Basado en tu última visita'})%>
-	<%- include('./tarjetas',{condicion:'ofertas', titulo: 'Ofertas'})%>			
-
-	<!-- footer -->
-	<%- include('./footer')%>
+	<h1>Home Page</h1>
+	<img src="/images/node.jpg" width="60%">
 </body>
 </html>
