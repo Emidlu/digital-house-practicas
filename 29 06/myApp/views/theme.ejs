@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:<%= title %>">
+    <form action="/theme" method="POST">
+        <label>Elegi un color</label><br>
+        <select name="color">
+          <option value="Red">Rojo</option>
+          <option value="Blue">Azul</option>
+          <option value="Green">Verde</option>
+          <option value="White">Blanco</option>
+          </select>
+        <br></br>
+        <label for="">RECORDAME</label>
+         <input type="checkbox" name="recordame">
+
+
+        <input type="submit" value="Enviar">
+        <p>elegiste el color <%= title %> </p>
+    </form>
+</body>
+</html>
