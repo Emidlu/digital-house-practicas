@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1><%= movie.title %> </h1>
+        <p>RATING: <%= movie.rating %> </p>
+        <p>PREMIOS: <%= movie.awards %> </p>
+        <p>RATING: <%= movie.rating %> </p>
+        <% if(movie.length != null){ %> 
+            <p>DURACION: <%=  movie.length %></p>
+        <% } %> 
+        <p>FECHA DE ESTRENO: <%= movie.release_date %> </p>
+         <% if(movie.genre_id != null){ %> 
+        <p>GENERO: <%= genre.name %> </p>
+         <% } %> 
+        <div>
+        <form action="/movies/edit/<%= movie.id %>" method="get" style="display: inline;">
+        <button type="submit">EDITAR</button>
+        </form>
+ 
+        <form action="/movies/delete/<%= movie.id %>?_method=DELETE" method="post" style="display: inline;">
+        <button type="submit">BORRAR</button>
+        </form>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

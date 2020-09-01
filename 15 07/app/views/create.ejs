@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/movies/create" method="POST">
+        <div>
+            <label for="inputTitle">Titulo:</label>
+            <input name='titulo' type="text">
+        </div>
+        <div>
+            <label for="inputRating">Rating:</label>
+            <input name='rating' type="text">
+        </div>
+        <div>
+            <label for="inputLength">Duracion:</label>
+            <input name='duracion' type="text">
+        </div>
+        <div>
+            <label for="inputAwards">Premios:</label>
+            <input name='premios' type="text">
+        </div>
+        <div>
+            <label for="inputDate">Fecha:</label>
+            <input name='fecha' type="text">
+        </div>
+        <div>
+            <label for="inputGenre">Genero:</label>
+            <select name="genero">
+            <% for (let i = 0; i < genre.length; i++) { %> 
+            <option value="<%= genre[i].id %>">
+                    <%= genre[i].name %> 
+                </option>
+            <% } %> 
+            </select> 
+        </div>
+
+
+        <button type="submit"  >Agregar</button>
+
+
+
+
+    </form>
+</body>
+</html>
